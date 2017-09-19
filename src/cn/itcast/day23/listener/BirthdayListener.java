@@ -1,20 +1,17 @@
 package cn.itcast.day23.listener;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-
 import cn.itcast.day23.domain.User;
 import cn.itcast.day23.service.UserService;
 import cn.itcast.day23.service.impl.UserServiceImpl;
 import cn.itcast.day23.utils.DateUtils;
 import cn.itcast.day23.utils.MailUtils;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import java.util.Date;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BirthdayListener implements ServletContextListener {
 	
@@ -41,7 +38,7 @@ public class BirthdayListener implements ServletContextListener {
 						for( User user : list ){
 							//发送邮件
 							try {
-								MailUtils.sendMail( user.getEmail(), "生日快乐");
+								MailUtils.sendMail( user.getEmail(), "哎呦喂");
 							} catch (Exception e) {
 								e.printStackTrace();
 							}

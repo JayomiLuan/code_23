@@ -1,9 +1,8 @@
 package cn.itcast.day23.domain;
 
-import java.io.Serializable;
-
 import javax.servlet.http.HttpSessionActivationListener;
 import javax.servlet.http.HttpSessionEvent;
+import java.io.Serializable;
 
 /**
  * 监听此类对象是否随着Session被钝化和活化的事件，
@@ -15,7 +14,9 @@ public class Category implements HttpSessionActivationListener,Serializable{
 	
 	private String id;
 	private String name;
-	public Category(){}
+	public Category(){
+		super();
+	}
 	public Category(String id, String name) {
 		super();
 		this.id = id;
@@ -33,8 +34,7 @@ public class Category implements HttpSessionActivationListener,Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 	/**钝化：当服务器正常关闭的时候，可以把Session序列化到磁盘，
 	 * 当服务器再次启动的时候，把磁 盘上的序列化的Session恢复到内存
 	 * 在进行此操作时，Session中保存的对象，是否可以一起被序列化和反序列化

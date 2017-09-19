@@ -42,6 +42,10 @@ public class DateUtils {
 	public static Long getOneDay(){
 		return 24 * 60 * 60 * 1000L;
 	}
+
+	public static Long getOneSecond(){
+		return 5000L;
+	}
 	
 	/**
 	 * 获得几月(两位)

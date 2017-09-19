@@ -25,6 +25,18 @@
     <listener-class>cn.itcast.day23.listener.MyServletContextListener</listener-class>
   </listener>-->
 
+  <!--<listener>
+    <listener-class>cn.itcast.day23.listener.MyRequestAttributeListener</listener-class>
+  </listener>-->
+
+  <!--<listener>
+    <listener-class>cn.itcast.day23.listener.MySessionAttributeListener</listener-class>
+  </listener>-->
+
+  <!--<listener>
+    <listener-class>cn.itcast.day23.listener.MyServletContextAttributeListener</listener-class>
+  </listener>-->
+
   <!-- 发送生日祝贺 的监听器 -->
   <listener>
     <listener-class>cn.itcast.day23.listener.BirthdayListener</listener-class>

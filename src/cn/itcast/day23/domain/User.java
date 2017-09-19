@@ -1,9 +1,8 @@
 package cn.itcast.day23.domain;
 
-import java.util.Date;
-
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
+import java.util.Date;
 
 
 public class User implements HttpSessionBindingListener {
@@ -13,7 +12,9 @@ public class User implements HttpSessionBindingListener {
 	private Date birthday;
 	private String email;
 	
-	public User(){}
+	public User(){
+		super();
+	}
 	
 	public User(String id, String name, String password , Date birthday ,String email) {
 		super();
@@ -24,7 +25,14 @@ public class User implements HttpSessionBindingListener {
 		this.email = email;
 	}
 
-
+	public User(String id, String name, String password ) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.birthday = birthday;
+		this.email = email;
+	}
 
 	public String getEmail() {
 		return email;
@@ -60,8 +68,7 @@ public class User implements HttpSessionBindingListener {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
 	//监听绑定事件
 	@Override
 	public void valueBound(HttpSessionBindingEvent event) {
@@ -73,4 +80,5 @@ public class User implements HttpSessionBindingListener {
 	public void valueUnbound(HttpSessionBindingEvent event) {
 		System.out.println("User对象和Session解绑啦~~");
 	}
+
 }

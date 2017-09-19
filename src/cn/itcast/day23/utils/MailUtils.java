@@ -1,17 +1,11 @@
 package cn.itcast.day23.utils;
 
-import java.util.Properties;
-
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMessage.RecipientType;
+import java.util.Properties;
 
 public class MailUtils {
 
@@ -21,17 +15,17 @@ public class MailUtils {
 
 		Properties props = new Properties();
 		//设置发送的协议
-		props.setProperty("mail.transport.protocol", "SMTP");
+		props.setProperty("mail.transport.protocol", "smtp");
 		
 		//设置发送邮件的服务器
-		props.setProperty("mail.host", "smtp.126.com");
+		props.setProperty("mail.host", "smtp.163.com");
 		props.setProperty("mail.smtp.auth", "true");// 指定验证为true
 
 		// 创建验证器
 		Authenticator auth = new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
 				//设置发送人的帐号和密码
-				return new PasswordAuthentication("itcast_test_lx", "itcast");
+				return new PasswordAuthentication("lj148432", "lwjlwj148432");
 			}
 		};
 
@@ -41,15 +35,14 @@ public class MailUtils {
 		Message message = new MimeMessage(session);
 
 		//设置发送者
-		message.setFrom(new InternetAddress("itcast_test_lx@126.com"));
+		message.setFrom(new InternetAddress("lj148432@163.com"));
 
 		//设置发送方式与接收者
 		message.setRecipient(RecipientType.TO, new InternetAddress(email)); 
 
 		//设置邮件主题
-		message.setSubject("happy birthday");
+		message.setSubject("日期");
 		// message.setText("这是一封激活邮件，请<a href='#'>点击</a>");
-
 		//设置邮件内容
 		message.setContent(emailMsg, "text/html;charset=utf-8");
 
