@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
 		Connection conn = JdbcUtils.getConnection();
 		String sql = "select id,name,password,birthday,email from tb_user where " + condition;
 		System.out.println("sql:" + sql);
-		List<User> list = (List<User>) queryRunner.query(conn , sql , new BeanListHandler(User.class) );
+		List<User> list = queryRunner.query(conn , sql , new BeanListHandler<>(User.class) );
 		
 		return list;
 	}

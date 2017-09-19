@@ -8,7 +8,23 @@
     <servlet-name>test</servlet-name>
     <url-pattern>/testServlet</url-pattern>
   </servlet-mapping>
-  
+
+
+<!--  <listener>
+    <listener-class>cn.itcast.day23.listener.MyRequestListener</listener-class>
+  </listener>-->
+
+  <!--<listener>
+    <listener-class>cn.itcast.day23.listener.MySessionListener</listener-class>
+  </listener>
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>-->
+
+  <!--<listener>
+    <listener-class>cn.itcast.day23.listener.MyServletContextListener</listener-class>
+  </listener>-->
+
   <!-- 发送生日祝贺 的监听器 -->
   <listener>
     <listener-class>cn.itcast.day23.listener.BirthdayListener</listener-class>
